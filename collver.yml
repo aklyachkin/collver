@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+  - name: retrieve powervm facts
+    ibm.power_aix.lpar_facts:
+  - name: print ibm.power_aix version
+    debug:
+      msg: "ibm.power_aix version {{ lookup('community.general.collection_version', 'ibm.power_aix') }}"
+  - name: print facts
+    debug:
+      var: ansible_facts
